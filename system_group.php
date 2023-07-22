@@ -29,9 +29,9 @@
     $community = 'public'; 
 
     // System Group
-    $sys_descr = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.1');
-    $sys_contact = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.4');
-    $sys_name = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.5');
+    $sys_descr = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.1.0');
+    $sys_contact = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.4.0');
+    $sys_name = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.5.0');
 
     // ifTable (Interfaces group)
     $interfaces = snmp2_real_walk($agent_ip, $community, '1.3.6.1.2.1.2.2.1.2');
