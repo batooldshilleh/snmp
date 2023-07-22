@@ -25,8 +25,8 @@
     }
 
     // SNMP agent details
-    $agent_ip = '127.0.0.1'; // Replace with the actual SNMP agent IP
-    $community = 'public'; // Replace with the SNMP community string
+    $agent_ip = '127.0.0.1'; 
+    $community = 'public'; 
 
     // System Group
     $sys_descr = getSnmpData($agent_ip, $community, 'sysDescr.0');
@@ -102,3 +102,4 @@
 
 </body>
 </html>
+
