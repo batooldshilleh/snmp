@@ -25,22 +25,22 @@
     }
 
     // SNMP agent details
-    $agent_ip = '127.0.0.1'; 
+    $agent_ip = '127.0.0.1:161'; 
     $community = 'public'; 
 
     // System Group
-    $sys_descr = getSnmpData($agent_ip, $community, 'sysDescr.0');
-    $sys_contact = getSnmpData($agent_ip, $community, 'sysContact.0');
-    $sys_name = getSnmpData($agent_ip, $community, 'sysName.0');
+    $sys_descr = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.1');
+    $sys_contact = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.4');
+    $sys_name = getSnmpData($agent_ip, $community, '1.3.6.1.2.1.1.5');
 
     // ifTable (Interfaces group)
-    $interfaces = snmp2_real_walk($agent_ip, $community, 'ifDescr');
+    $interfaces = snmp2_real_walk($agent_ip, $community, '1.3.6.1.2.1.2.2.1.2');
 
     // udpTable
-    $udp_table = snmp2_real_walk($agent_ip, $community, 'udpLocalAddress');
+    $udp_table = snmp2_real_walk($agent_ip, $community, '1.3.6.1.2.1.7.5.1.1');
 
     // tcpTable
-    $tcp_table = snmp2_real_walk($agent_ip, $community, 'tcpConnState');
+    $tcp_table = snmp2_real_walk($agent_ip, $community, '1.3.6.1.2.1.6.13.1.1');
 
     ?>
 
